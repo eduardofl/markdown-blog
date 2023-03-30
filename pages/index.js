@@ -1,40 +1,35 @@
 import fs from 'fs';
-import Link from 'next/link';
+import FeaturedPost from '../components/FeaturedPost'; 
 
-export default function Blog({posts}){
+export default function Blog({ posts, featuredPosts }){
     return <main>
-        {posts.map(post => {
-            const { slug } = post
-            // Temporary title
-            // to-do: create metadata json for each post
-            const title = slug.charAt(0).toUpperCase() + slug.replace('_', ' ').slice(1);
-
-            return <article key={slug}>
-                <Link href={`/posts/${slug}`}>
-                    <h1>{title}</h1>
-                </Link>
-            </article>
-        })}
+        {featuredPosts.map((post) => (
+            <FeaturedPost key={post.slug} post={post} />
+        ))}
     </main>
 }
 
 export async function getStaticProps(){
-    // Get list of files from the posts folder
     const files = fs.readdirSync('posts');
 
-    // Get slug from each post
-    const posts = files.map((fileName) => {
+    const featuredPosts = files.map((fileName) => {
         const slug = fileName.replace('.md', '');
+        // to-do: create metadata json for each post
+        const title = slug.charAt(0).toUpperCase() + slug.replace('_', ' ').slice(1);
 
         return {
           slug,
+          title,
+          description:
+            'This is a wider card with supporting text below as a natural lead-in to additional content.',
+          image: 'https://source.unsplash.com/random',
+          imageLabel: 'Image Text',
         };
     });
 
-    // Return the pages static props
     return {
         props: {
-          posts,
+            featuredPosts,
         },
     };
 }
