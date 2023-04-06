@@ -1,13 +1,12 @@
-import * as React from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import Link from './Link';
 
 const Header = (props: HeaderProps) => {
   const { sections, title } = props;
 
   return (
-    <React.Fragment>
+    <>
       <Toolbar component="nav" sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'space-between' }}>
         <Typography
           component="h2"
@@ -31,7 +30,7 @@ const Header = (props: HeaderProps) => {
           </Link>
         ))}
       </Toolbar>
-    </React.Fragment>
+    </>
   );
 }
 

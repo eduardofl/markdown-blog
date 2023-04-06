@@ -5,6 +5,7 @@ import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import { useRouter } from 'next/router';
 
 interface FeaturedPostProps {
   post: {
@@ -18,11 +19,16 @@ interface FeaturedPostProps {
 }
 
 export default function FeaturedPost(props: FeaturedPostProps) {
+  const router = useRouter();
   const { post } = props;
 
+  const redirectToPost = (postSlug: string) => {
+    router.push(`/posts/${postSlug}`);
+  };
+
   return (
-    <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href={`/posts/${post.slug}`}>
+    <Grid item xs={12} md={6} sx={{ marginY: 1, marginX: 'auto', width: '70%' }}>
+      <CardActionArea onClick={() => redirectToPost(post.slug)}>
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">
@@ -40,7 +46,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
           </CardContent>
           <CardMedia
             component="img"
-            sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
+            sx={{ width: 160, maxHeight: 160, display: { xs: 'none', sm: 'block' } }}
             image={post.image}
             alt={post.imageLabel}
           />

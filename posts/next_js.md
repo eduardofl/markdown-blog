@@ -1,28 +1,29 @@
-# Next JS
+# Next.js
 
-## What is Next JS
+## O que é o Next.js?
 
-Next JS is a framework for ReactJS for production, while react focus more on user interface, Next offers more resources to build large scales applications. Basically it solves ReactJS common problems and makes building these applications easier by adding a lot of features.
+Next.js é um framework baseado na biblioteca ReactJS, que se descreve como um framework React para produção. Enquanto a biblioteca React foca mais em facilitar o desenvolvimento de interfaces de usuário, o Next(vamos nos referir ao Next.js assim a partir desse momento) oferece recursos visando a construção de aplicações escaláveis e de grande porte, resolvendo alguns problemas presentes em aplicações React através da adição de algumas funcionalidades.
 
-### Key features added
+### Funcionalidades chave adicionadas
 
-- Built-in server-side rendering(which improves performance, SEO, and more)
-- File-based Routing(with React this is tipically done using react-router and some coding)
-- Fullstack capabilities(possibility to add NodeJS code to the application)
+- Static Site Generation(SSG) - geração de páginas estáticas durante o build, que diminui o tempo de carregamento inicial, melhora performance e SEO da aplicação
+- Server Side Rendering(SSR) - renderização da página no servidor e retorno do HTML montado para o usuário, o que melhora performance, SEO da aplicação e outros.
+- File-based Routing - navegação entre telas baseado na estrutura de arquivos do projeto, utilizando apenas React geralmente precisamos utilizar a biblioteca `react-router` e implementar a navegação
+- Capacidade full-stack - Possibilidade de adicionar código NodeJS à aplicação
 
-## Basics & Foundation
+## Conceitos básicos
 
-### File-based routing
+### Navegação baseada em arquivos
 
-- Create routes based on file path
+- Como criar rotas baseadas no caminho do arquivo
 
-- Create dynamic routes
-    - How to create dynamic routes
-    - How to access values passed to dynamic routes using useRouter hook
+- Criando rotas dinâmicas
+    - Como criar rotas dinâmicas
+    - Como acessar valores passados às rotas dinâmicas utilizando o hook `useRouter`
 
-- Navigating between pages
-    - Using Link component
-    - Difference between anchor tag and Link(preserve state, and offer a better user experience)
+- Navegação entre páginas
+    - Utilizando o component Link
+    - Diferença entre uma tag de link `<a>` do html e do componente `Link` do Next (preserva o estado e oferece uma experiência melhor ao usuário)
 
 ### Page pre-rendering & Data fetching
 
