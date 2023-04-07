@@ -16,9 +16,9 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header title="Blog" sections={sections} />
-      <div>
+      <main>
         {children}
-      </div>
+      </main>
       <Footer social={social} />
     </div>
   );

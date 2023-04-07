@@ -1,4 +1,5 @@
 import fs from 'fs';
+import Container from '@mui/material/Container';
 import FeaturedPost from '../components/FeaturedPost'; 
 
 export async function getStaticProps() {
@@ -25,13 +26,13 @@ export async function getStaticProps() {
   };
 }
 
-const Blog = ({ posts, featuredPosts }) => {
+const Blog = ({ featuredPosts }) => {
   return (
-    <main>
+    <Container disableGutters maxWidth='lg' sx={{ marginX: 'auto', marginY: 1 }}>
       {featuredPosts.map((post) => (
         <FeaturedPost key={post.slug} post={post} />
       ))}
-    </main>
+    </Container>
   );
 };
 

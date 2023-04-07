@@ -27,7 +27,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
   };
 
   return (
-    <Grid item xs={12} md={6} sx={{ marginY: 1, marginX: 'auto', width: '70%' }}>
+    <Grid item xs={12} md={12} lg={12} xl={12}>
       <CardActionArea onClick={() => redirectToPost(post.slug)}>
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
