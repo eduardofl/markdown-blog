@@ -1,10 +1,22 @@
+import { Container } from "@mui/material";
 import fs from "fs";
+import Head from "next/head";
 import ReactMarkdown from 'react-markdown'
 
-export default function Post({ content }) {
-  return <main>
-    <ReactMarkdown>{content}</ReactMarkdown>
-  </main>
+export default function Post({ content, title }) {
+  return (
+    <>
+      <Head>
+        <title>{title} - Blog Markdown</title>
+      </Head>
+      <Container disableGutters maxWidth='lg' sx={{ marginX: 'auto' }}>
+        <ReactMarkdown>
+          {content}
+        </ReactMarkdown>
+      </Container>
+      
+    </>
+  );
 }
 
 export async function getStaticPaths() {
@@ -21,10 +33,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const fileContent = fs.readFileSync(`posts/${slug}.md`, 'utf-8');
+  const title = slug.charAt(0).toUpperCase() + slug.replace('_', ' ').slice(1); // to-do: create metadata json for each post
 
   return {
     props: {
       content: fileContent,
+      title,
     },
   };
 }

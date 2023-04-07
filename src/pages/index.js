@@ -1,6 +1,8 @@
 import fs from 'fs';
 import Container from '@mui/material/Container';
 import FeaturedPost from '../components/FeaturedPost'; 
+import { List } from '@mui/material';
+import Head from 'next/head';
 
 export async function getStaticProps() {
   const files = fs.readdirSync('posts');
@@ -28,11 +30,18 @@ export async function getStaticProps() {
 
 const Blog = ({ featuredPosts }) => {
   return (
-    <Container disableGutters maxWidth='lg' sx={{ marginX: 'auto', marginY: 1 }}>
-      {featuredPosts.map((post) => (
-        <FeaturedPost key={post.slug} post={post} />
-      ))}
-    </Container>
+    <>
+      <Head>
+        <title>Blog Markdown</title>
+      </Head>
+      <Container disableGutters maxWidth='lg' sx={{ marginX: 'auto' }}>
+        <List>
+          {featuredPosts.map((post) => (
+            <FeaturedPost key={post.slug} post={post} />
+          ))}
+        </List>
+      </Container>
+    </>
   );
 };
 

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { useRouter } from 'next/router';
+import { ListItem } from '@mui/material';
 
 interface FeaturedPostProps {
   post: {
@@ -27,7 +27,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
   };
 
   return (
-    <Grid item xs={12} md={12} lg={12} xl={12}>
+    <ListItem disableGutters>
       <CardActionArea onClick={() => redirectToPost(post.slug)}>
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
@@ -52,6 +52,6 @@ export default function FeaturedPost(props: FeaturedPostProps) {
           />
         </Card>
       </CardActionArea>
-    </Grid>
+    </ListItem>
   );
 }
