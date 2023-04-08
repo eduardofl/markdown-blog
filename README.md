@@ -16,7 +16,7 @@ To create the build use the command:
 
 Or create the build and run:
 
-`npm run build && npm run start`
+`npm run build && npm start`
 
 ---
 ## Code check and tests
