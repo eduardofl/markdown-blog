@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,8 @@
   },
   "devDependencies": {
     "@types/node": "18.15.10",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
     "typescript": "5.0.2"
   }
 }
