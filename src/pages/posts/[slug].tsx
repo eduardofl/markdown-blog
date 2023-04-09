@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 
 import { Container } from '@mui/material';
 
+import PageTitle from '../../components/PageTitle';
 import {
   getPostSlugs,
   getPostContentBySlug,
@@ -13,9 +14,7 @@ import {
 const Post = ({ content, title }): JSX.Element => {
   return (
     <>
-      <Head>
-        <title>{`${title} - Blog Markdown`}</title>
-      </Head>
+      <PageTitle>{`${title} - Blog Markdown`}</PageTitle>
       <Container disableGutters maxWidth="md" sx={{ marginX: 'auto' }}>
         <ReactMarkdown>{content}</ReactMarkdown>
       </Container>

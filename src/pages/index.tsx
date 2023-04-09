@@ -5,6 +5,7 @@ import { List } from '@mui/material';
 import Container from '@mui/material/Container';
 
 import FeaturedPost from '../components/FeaturedPost';
+import PageTitle from '../components/PageTitle';
 import { getPostSlugs, getPostMetadataBySlug } from '../services/post-service';
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -27,9 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const Blog = ({ featuredPosts }): JSX.Element => {
   return (
     <>
-      <Head>
-        <title>Blog Markdown</title>
-      </Head>
+      <PageTitle>Blog Markdown</PageTitle>
       <Container disableGutters maxWidth="md" sx={{ marginX: 'auto' }}>
         <List>
           {featuredPosts.map((post) => (
