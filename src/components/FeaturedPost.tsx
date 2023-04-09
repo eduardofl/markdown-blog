@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
@@ -6,6 +7,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { useRouter } from 'next/router';
 import { ListItem } from '@mui/material';
+
+import PostDate from './PostDate';
 
 interface FeaturedPostProps {
   post: {
@@ -31,12 +34,10 @@ export default function FeaturedPost(props: FeaturedPostProps) {
       <CardActionArea onClick={() => redirectToPost(post.slug)}>
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
-            <Typography component="h2" variant="h5">
+            <Typography component="h3" variant="h5">
               {post.title}
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary">
-              {post.date}
-            </Typography>
+            <PostDate date={post.date} />
             <Typography variant="subtitle1" paragraph>
               {post.description}
             </Typography>
