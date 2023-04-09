@@ -18,12 +18,13 @@ Next.js é um framework baseado na biblioteca ReactJS, que se descreve como um f
 - Como criar rotas baseadas no caminho do arquivo
 
 - Criando rotas dinâmicas
-    - Como criar rotas dinâmicas
-    - Como acessar valores passados às rotas dinâmicas utilizando o hook `useRouter`
+
+  - Como criar rotas dinâmicas
+  - Como acessar valores passados às rotas dinâmicas utilizando o hook `useRouter`
 
 - Navegação entre páginas
-    - Utilizando o component Link
-    - Diferença entre uma tag de link `<a>` do html e do componente `Link` do Next (preserva o estado e oferece uma experiência melhor ao usuário)
+  - Utilizando o component Link
+  - Diferença entre uma tag de link `<a>` do html e do componente `Link` do Next (preserva o estado e oferece uma experiência melhor ao usuário)
 
 ### Page pre-rendering & Data fetching
 
@@ -40,4 +41,3 @@ Next.js é um framework baseado na biblioteca ReactJS, que se descreve como um f
 ### Deployment & Configuration
 
 ### Authentication
-

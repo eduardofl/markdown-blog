@@ -4,7 +4,6 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from './Link';
 
-
 const Copyright = () => {
   const copyrightText = 'Blog do Druida';
   const year = new Date().getFullYear();
@@ -21,7 +20,7 @@ const Footer = (props: FooterProps) => {
 
   return (
     <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Container sx={{ display: 'flex', justifyContent: 'center' }}>
           {social.map((network) => (
             <Link
@@ -49,6 +48,6 @@ interface FooterProps {
     name: string;
     url: string;
   }>;
-};
+}
 
 export default Footer;

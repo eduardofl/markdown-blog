@@ -8,7 +8,15 @@ const Header = (props: HeaderProps) => {
 
   return (
     <Toolbar component="nav" sx={{ borderBottom: 1, borderColor: 'divider' }}>
-      <Container disableGutters maxWidth='lg' sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <Container
+        disableGutters
+        maxWidth="md"
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
         <Typography
           component="h2"
           variant="h5"
@@ -16,7 +24,9 @@ const Header = (props: HeaderProps) => {
           align="center"
           noWrap
         >
-          <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>{title}</Link>
+          <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
+            {title}
+          </Link>
         </Typography>
         <div>
           {sections.map((section) => (
@@ -35,7 +45,7 @@ const Header = (props: HeaderProps) => {
       </Container>
     </Toolbar>
   );
-}
+};
 
 interface HeaderProps {
   sections: ReadonlyArray<{

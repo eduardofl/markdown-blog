@@ -1,11 +1,11 @@
-import type { GetStaticProps } from "next";
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import { List } from '@mui/material';
 import Container from '@mui/material/Container';
 
-import FeaturedPost from '../components/FeaturedPost'; 
-import { getPostSlugs, getPostMetadataBySlug } from '../services/post-service'; 
+import FeaturedPost from '../components/FeaturedPost';
+import { getPostSlugs, getPostMetadataBySlug } from '../services/post-service';
 
 export const getStaticProps: GetStaticProps = async () => {
   const postSlugs = getPostSlugs();
@@ -24,13 +24,13 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Blog = ({ featuredPosts }) => {
+const Blog = ({ featuredPosts }): JSX.Element => {
   return (
     <>
       <Head>
         <title>Blog Markdown</title>
       </Head>
-      <Container disableGutters maxWidth='lg' sx={{ marginX: 'auto' }}>
+      <Container disableGutters maxWidth="md" sx={{ marginX: 'auto' }}>
         <List>
           {featuredPosts.map((post) => (
             <FeaturedPost key={post.slug} post={post} />

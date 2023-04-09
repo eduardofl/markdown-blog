@@ -1,14 +1,14 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 import Container from '@mui/material/Container';
 
-const About = () => {
+const About = (): JSX.Element => {
   return (
     <>
       <Head>
         <title>Sobre - Blog Markdown</title>
       </Head>
-      <Container disableGutters maxWidth='lg' sx={{ marginX: 'auto' }}>
+      <Container disableGutters maxWidth="md" sx={{ marginX: 'auto' }}>
         <h1>About Component</h1>
         <p>Paragraph describing who is writting.</p>
       </Container>

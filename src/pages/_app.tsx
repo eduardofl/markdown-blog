@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 import '../styles/globals.css';
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }): JSX.Element => {
   return (
     <Layout>
       <Component {...pageProps} />

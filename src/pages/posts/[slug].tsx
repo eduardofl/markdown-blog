@@ -1,31 +1,34 @@
-import type { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
+import type { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 
-import { Container } from "@mui/material";
+import { Container } from '@mui/material';
 
-import { getPostSlugs, getPostContentBySlug, getPostMetadataBySlug } from "../../services/post-service";
+import {
+  getPostSlugs,
+  getPostContentBySlug,
+  getPostMetadataBySlug,
+} from '../../services/post-service';
 
-export default function Post({ content, title }) {
+const Post = ({ content, title }): JSX.Element => {
   return (
     <>
       <Head>
         <title>{`${title} - Blog Markdown`}</title>
       </Head>
-      <Container disableGutters maxWidth='lg' sx={{ marginX: 'auto' }}>
-        <ReactMarkdown>
-          {content}
-        </ReactMarkdown>
+      <Container disableGutters maxWidth="md" sx={{ marginX: 'auto' }}>
+        <ReactMarkdown>{content}</ReactMarkdown>
       </Container>
-      
     </>
   );
-}
+};
+
+export default Post;
 
 export const getStaticPaths: GetStaticPaths = () => {
   const slugs = getPostSlugs();
   const paths = slugs.map((slug) => ({
-    params: { slug }
+    params: { slug },
   }));
 
   return {
