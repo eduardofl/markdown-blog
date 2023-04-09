@@ -14,9 +14,7 @@ const Post = ({ content, title }): JSX.Element => {
     <>
       <PageTitle>{`${title} - Blog Markdown`}</PageTitle>
       <PageBody>
-        <ReactMarkdown>
-          {content}
-        </ReactMarkdown>
+        <ReactMarkdown>{content}</ReactMarkdown>
       </PageBody>
     </>
   );

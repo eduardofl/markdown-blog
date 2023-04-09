@@ -7,7 +7,7 @@ const Header = (props: HeaderProps) => {
   const { sections, title } = props;
 
   return (
-    <Toolbar component="nav" sx={{ borderBottom: 1, borderColor: 'divider' }}>
+    <Toolbar component="nav">
       <Container
         disableGutters
         maxWidth="sm"

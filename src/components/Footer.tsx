@@ -4,39 +4,35 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from './Link';
 
-const Copyright = () => {
-  const copyrightText = 'Blog do Druida';
-  const year = new Date().getFullYear();
-
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {`${copyrightText} © ${year}.`}
-    </Typography>
-  );
-};
-
 const Footer = (props: FooterProps) => {
   const { social } = props;
 
   return (
-    <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
-      <Container maxWidth="sm">
-        <Container sx={{ display: 'flex', justifyContent: 'center' }}>
-          {social.map((network) => (
+    <Box component="footer" sx={{ bgcolor: 'background.paper', py: 3 }}>
+      <Container
+        maxWidth="sm"
+        disableGutters
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+        }}
+      >
+        {social.map((network, index) => (
+          <>
+            {index !== 0 && <Typography variant="caption">•</Typography>}
             <Link
-              display="flex"
-              variant="body1"
+              variant="subtitle1"
               href={network.url}
               key={network.name}
               target="_blank"
               rel="noreferrer"
               sx={{ color: 'rgb(0 0 0 / 60%)', mx: 0.5 }}
             >
-              <network.icon />
+              {network.name.toLowerCase()}
             </Link>
-          ))}
-        </Container>
-        <Copyright />
+          </>
+        ))}
       </Container>
     </Box>
   );
@@ -44,7 +40,6 @@ const Footer = (props: FooterProps) => {
 
 interface FooterProps {
   social: ReadonlyArray<{
-    icon: React.ElementType;
     name: string;
     url: string;
   }>;
