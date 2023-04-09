@@ -9,7 +9,7 @@ const PostDate = ({ date }): JSX.Element => {
   });
 
   return (
-    <Typography variant="subtitle1" color="text.secondary">
+    <Typography component="small" variant="caption" color="text.secondary">
       {formattedDate}
     </Typography>
   );

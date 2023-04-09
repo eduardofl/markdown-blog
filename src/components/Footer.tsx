@@ -20,7 +20,7 @@ const Footer = (props: FooterProps) => {
 
   return (
     <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
-      <Container maxWidth="md">
+      <Container maxWidth="sm">
         <Container sx={{ display: 'flex', justifyContent: 'center' }}>
           {social.map((network) => (
             <Link

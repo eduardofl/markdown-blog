@@ -10,7 +10,7 @@ const Header = (props: HeaderProps) => {
     <Toolbar component="nav" sx={{ borderBottom: 1, borderColor: 'divider' }}>
       <Container
         disableGutters
-        maxWidth="md"
+        maxWidth="sm"
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
