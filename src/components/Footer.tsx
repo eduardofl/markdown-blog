@@ -8,32 +8,36 @@ const Footer = (props: FooterProps) => {
   const { social } = props;
 
   return (
-    <Box component="footer" sx={{ bgcolor: 'background.paper', py: 3 }}>
-      <Container
-        maxWidth="sm"
-        disableGutters
-        sx={{
-          display: 'flex',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-        }}
-      >
-        {social.map((network, index) => (
-          <>
-            {index !== 0 && <Typography variant="caption">•</Typography>}
-            <Link
-              variant="subtitle1"
-              href={network.url}
-              key={network.name}
-              target="_blank"
-              rel="noreferrer"
-              sx={{ color: 'rgb(0 0 0 / 60%)', mx: 0.5 }}
-            >
-              {network.name.toLowerCase()}
-            </Link>
-          </>
-        ))}
-      </Container>
+    <Box
+      component="footer"
+      sx={{
+        bgcolor: 'background.paper',
+        py: 3,
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+      }}
+    >
+      {social.map((network, index) => (
+        <>
+          {index !== 0 && (
+            <Typography variant="caption" color="primary">
+              •
+            </Typography>
+          )}
+          <Link
+            variant="subtitle1"
+            color="primary"
+            href={network.url}
+            key={network.name}
+            target="_blank"
+            rel="noreferrer"
+            sx={{ mx: 0.5 }}
+          >
+            {network.name.toLowerCase()}
+          </Link>
+        </>
+      ))}
     </Box>
   );
 };

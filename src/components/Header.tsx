@@ -7,42 +7,41 @@ const Header = (props: HeaderProps) => {
   const { sections, title } = props;
 
   return (
-    <Toolbar component="nav">
-      <Container
-        disableGutters
-        maxWidth="sm"
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
+    <Toolbar
+      component="header"
+      disableGutters
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        mb: 5,
+      }}
+    >
+      <Typography
+        component="h1"
+        variant="h3"
+        color="inherit"
+        align="center"
+        noWrap
       >
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-        >
-          <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
-            {title}
+        <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
+          {title}
+        </Link>
+      </Typography>
+      <div>
+        {sections.map((section) => (
+          <Link
+            color="inherit"
+            noWrap
+            key={section.title}
+            variant="body2"
+            href={section.url}
+            sx={{ p: 1, flexShrink: 0 }}
+          >
+            {section.title}
           </Link>
-        </Typography>
-        <div>
-          {sections.map((section) => (
-            <Link
-              color="inherit"
-              noWrap
-              key={section.title}
-              variant="body2"
-              href={section.url}
-              sx={{ p: 1, flexShrink: 0 }}
-            >
-              {section.title}
-            </Link>
-          ))}
-        </div>
-      </Container>
+        ))}
+      </div>
     </Toolbar>
   );
 };

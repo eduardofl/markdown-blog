@@ -24,20 +24,23 @@ const FeaturedPost = (props: FeaturedPostProps): JSX.Element => {
   };
 
   return (
-    <Container component="article" disableGutters>
-      <Typography
-        component="h3"
-        variant="h6"
-        onClick={() => redirectToPost(post.slug)}
-        sx={{
-          '&:hover': {
-            cursor: 'pointer',
-          },
-        }}
-      >
-        {post.title}
-      </Typography>
-      <PostDate date={post.date} />
+    <Container component="article" disableGutters sx={{ my: 5 }}>
+      <header>
+        <Typography
+          component="h3"
+          variant="h5"
+          color="primary"
+          onClick={() => redirectToPost(post.slug)}
+          sx={{
+            '&:hover': {
+              cursor: 'pointer',
+            },
+          }}
+        >
+          {post.title}
+        </Typography>
+        <PostDate date={post.date} />
+      </header>
       <Typography variant="subtitle2" paragraph>
         {post.description}
       </Typography>
