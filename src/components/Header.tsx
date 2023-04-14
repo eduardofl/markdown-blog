@@ -2,8 +2,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from './Link';
 
+import { PaletteMode } from '@mui/material';
+import TogglePalleteMode from './TogglePalleteMode';
+
 const Header = (props: HeaderProps) => {
-  const { sections, title } = props;
+  const { title, mode, toggleMode } = props;
 
   return (
     <Toolbar
@@ -27,30 +30,15 @@ const Header = (props: HeaderProps) => {
           {title}
         </Link>
       </Typography>
-      <div>
-        {sections.map((section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            sx={{ p: 1, flexShrink: 0 }}
-          >
-            {section.title}
-          </Link>
-        ))}
-      </div>
+      <TogglePalleteMode mode={mode} toggleMode={toggleMode} />
     </Toolbar>
   );
 };
 
 interface HeaderProps {
-  sections: ReadonlyArray<{
-    title: string;
-    url: string;
-  }>;
   title: string;
+  mode: PaletteMode;
+  toggleMode: (mode: PaletteMode) => void;
 }
 
 export default Header;
