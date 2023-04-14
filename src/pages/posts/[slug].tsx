@@ -1,7 +1,6 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import ReactMarkdown from 'react-markdown';
 
-import PageBody from '../../components/PageBody';
 import PageTitle from '../../components/PageTitle';
 import {
   getPostSlugs,
@@ -13,9 +12,7 @@ const Post = ({ content, title }): JSX.Element => {
   return (
     <>
       <PageTitle>{`${title} - Blog Markdown`}</PageTitle>
-      <PageBody>
-        <ReactMarkdown>{content}</ReactMarkdown>
-      </PageBody>
+      <ReactMarkdown>{content}</ReactMarkdown>
     </>
   );
 };
