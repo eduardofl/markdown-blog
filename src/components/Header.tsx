@@ -1,7 +1,6 @@
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from './Link';
-import { Container } from '@mui/material';
 
 const Header = (props: HeaderProps) => {
   const { sections, title } = props;

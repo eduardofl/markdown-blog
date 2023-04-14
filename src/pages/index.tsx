@@ -1,4 +1,5 @@
 import type { GetStaticProps } from 'next';
+import AuthorDescription from '../components/AuthorDescription';
 
 import FeaturedPost from '../components/FeaturedPost';
 import PageTitle from '../components/PageTitle';
@@ -25,6 +26,7 @@ const Blog = ({ featuredPosts }): JSX.Element => {
   return (
     <>
       <PageTitle>Blog Markdown</PageTitle>
+      <AuthorDescription />
       {featuredPosts.map((post) => (
         <FeaturedPost key={post.slug} post={post} />
       ))}
