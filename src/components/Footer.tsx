@@ -10,7 +10,6 @@ const Footer = (props: FooterProps) => {
     <Box
       component="footer"
       sx={{
-        bgcolor: 'background.paper',
         py: 3,
         display: 'flex',
         justifyContent: 'flex-start',

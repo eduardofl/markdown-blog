@@ -5,15 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Layout from '../components/Layout';
 import '../styles/globals.css';
 import { PaletteMode } from '@mui/material';
-
-const getDesignTokens = (mode: PaletteMode) => ({
-  palette: {
-    mode,
-  },
-  typography: {
-    fontFamily: 'sans-serif',
-  },
-});
+import { getThemeTokens } from '../styles/theme';
 
 const MyApp = ({ Component, pageProps }): JSX.Element => {
   const [mode, setMode] = useState<PaletteMode>('light');
@@ -22,7 +14,7 @@ const MyApp = ({ Component, pageProps }): JSX.Element => {
     setMode(prevMode === 'light' ? 'dark' : 'light');
   };
 
-  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+  const theme = useMemo(() => createTheme(getThemeTokens(mode)), [mode]);
 
   return (
     <ThemeProvider theme={theme}>
