@@ -7,6 +7,9 @@ const lightModePalette = {
     light: tokens.LIGHT_MODE_PRIMARY_COLOR_LIGHT,
     dark: tokens.LIGHT_MODE_PRIMARY_COLOR_DARK,
   },
+  background: {
+    paper: tokens.LIGHT_MODE_BACKGROUND_COLOR_PAPER,
+  },
 };
 
 const darkModePalette = {
