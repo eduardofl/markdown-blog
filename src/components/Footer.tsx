@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import CircleIcon from '@mui/icons-material/Circle';
 import Link from './Link';
 
 const Footer = (props: FooterProps) => {
@@ -17,24 +17,19 @@ const Footer = (props: FooterProps) => {
       }}
     >
       {social.map((network, index) => (
-        <>
-          {index !== 0 && (
-            <Typography variant="caption" color="primary">
-              •
-            </Typography>
-          )}
+        <Box key={network.name} sx={{ display: 'flex', alignItems: 'center' }}>
+          {index !== 0 && <CircleIcon color="primary" sx={{ fontSize: 5 }} />}
           <Link
             variant="subtitle1"
             color="primary"
             href={network.url}
-            key={network.name}
             target="_blank"
             rel="noreferrer"
             sx={{ mx: 0.5 }}
           >
             {network.name.toLowerCase()}
           </Link>
-        </>
+        </Box>
       ))}
     </Box>
   );

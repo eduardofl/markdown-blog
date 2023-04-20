@@ -28,7 +28,6 @@ const AuthorDescription = (): JSX.Element => {
           alt="Picture of the author"
           width={IMAGE_SIZE}
           height={IMAGE_SIZE}
-          objectFit="cover"
         />
       </div>
       <div style={{ marginLeft: 15 }}>
