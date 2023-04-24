@@ -1,0 +1,5 @@
+{
+  "title": "Entendendo o Event Loop do Javascript",
+  "date": "2023-04-24T18:37:00Z",
+  "description": "Event loop, call stack e Web APIs, como essas peças se relacionam para organizar a ordem de execução do Javascript."
+}

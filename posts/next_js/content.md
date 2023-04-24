@@ -1,4 +1,5 @@
 # Next.js
+_30 de março de 2023, por [Eduardo](https://github.com/eduardofl)_
 
 ## O que é o Next.js?
 
