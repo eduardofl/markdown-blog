@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     color: ${(props) => {
       return props.theme.palette.mode === 'light'
         ? props.theme.palette.common.black
-        : props.theme.palette.warning.main;
+        : props.theme.palette.common.white;
     }};
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -42,8 +42,6 @@ const Wrapper = styled.div`
 
   pre {
     code {
-      background-color: ${(props) => props.theme.palette.common.black};
-      color: ${(props) => props.theme.palette.common.white};
       border: none;
       display: block;
       padding: 0.5em;
